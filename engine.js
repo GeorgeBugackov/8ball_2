@@ -8,24 +8,27 @@ $(function () {
 
 		$(".wrapper").off('click', showAnswer);
 
-		ballUp();
+		shake();
 
-	}
-
-	function ballUp () {
-		$(".ball").animate({
-			top: 100
-		}, 500, function () {
-			ballDown();
+		$(".ball").promise().done(function () {
+			setTimeout(getAnswer, 700);
 		});
+
 	}
 
-	function ballDown () {
+	function shake () {
+		for (i = 0; i < 10; i++) {
+			ballMove();
+		}	
+	}
+
+	function ballMove () {
 		$(".ball").animate({
-				top: 150
-		}, 500, function () {
-			getAnswer();
-		})
+						top: 100
+					}, 50,'swing')
+				.animate({
+						top: 150
+					}, 50,'swing');
 	}
 
 	function getAnswer () {
