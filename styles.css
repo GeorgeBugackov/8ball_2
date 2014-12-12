@@ -35,10 +35,17 @@ body {
 	top:20%;
 	position: relative;
 	box-shadow:  0px 30px 30px rgba(0,0,0,0.5);
+	
 }
 
 .ball:hover {
-	-webkit-transition: top steps(5, end) 0.5s;
+	-webkit-animation: ball-animation 100ms linear infinite;
+}
+
+@-webkit-keyframes ball-animation {
+	0% {top: 150px;}
+	50% {top: 100px;}
+	100% {top: 150px;}
 }
 
 .blink {
