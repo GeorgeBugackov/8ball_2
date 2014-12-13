@@ -91,3 +91,13 @@ body {
 	opacity: 0.3;
 	font-family: "Archangelsk";
 }
+
+.fader {
+	-webkit-animation: txt-animation 1s linear infinite;
+}
+
+@-webkit-keyframes txt-animation {
+	0% {opacity: 0;}
+	50% {opacity: 1;}
+	100% {opacity: 0;}
+}
