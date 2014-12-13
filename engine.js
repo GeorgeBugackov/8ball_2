@@ -5,13 +5,13 @@ function turnOn () {
 		ball = wrapper.querySelector('.ball'),
 		text = ball.querySelector('.text');
 
-	wrapper.addEventListener('click', showAnswer);
+	ball.addEventListener('click', showAnswer);
 
 	function showAnswer () {
 		var answers = ['Yes', 'No'],
 		answer = Math.round(Math.random());
 
-		wrapper.removeEventListener('click', showAnswer);
+		ball.removeEventListener('click', showAnswer);
 
 		fading(true);
 
@@ -20,8 +20,8 @@ function turnOn () {
 		setTimeout(function() {
 			fading(false);
 			text.innerText = 8;
-			wrapper.addEventListener('click', showAnswer);
-		}, 1000);
+			ball.addEventListener('click', showAnswer);
+		}, 5000);
 	}
 
 	function fading (toggle) {
